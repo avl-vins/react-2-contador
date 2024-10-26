@@ -37,6 +37,15 @@ const boton = {
 export const CounterApp = ({count = 0}) => {
     const initial = count
     const [contador, setContador] = useState(initial)
+
+    const aumentaContador = ()=>{
+        setContador(contador+1)
+
+    }
+    const disminuyeContador = ()=>{
+        setContador(contador-1)
+
+    }
     
   return (
     <>
@@ -47,14 +56,11 @@ export const CounterApp = ({count = 0}) => {
     <div style={card} >
         <div style={display} >{contador}</div  >
         <div style={contenedorBoton}>
-        <button style={boton} >+</button>
-        <button style={boton} >-</button>
+        <button style={boton} onClick={aumentaContador} >+</button>
+        <button style={boton}  onClick={disminuyeContador} >-</button>
 
         </div>
     </div>
-     
-
-
     </div>
     </>
 )
